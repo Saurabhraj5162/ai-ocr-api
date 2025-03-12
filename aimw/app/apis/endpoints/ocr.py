@@ -32,7 +32,7 @@ async def perform_ocr(file: UploadFile = File(...), db: Session = Depends(get_db
 
     text = read_image(file_location)
 
-    # saving ocr result in db:
+    # creating and saving ocr result in db:
     ocr_record = OcrResults()
     ocr_record.file_name = unique_filename
     ocr_record.text = text
